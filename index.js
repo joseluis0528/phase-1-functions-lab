@@ -12,15 +12,15 @@ function distanceFromHqInFeet(number) {
     return distanceFromHqInBlocks(number) * 264;
 }
 
-function distanceTravelledInFeet(number, headquarters) {
-    if (number < headquarters) {
-        return (headquarters - number) * 264;
-    } else return (number - headquarters) * 264;
+function distanceTravelledInFeet(start, destination) {
+    if (start < destination) {
+        return (destination - start) * 264;
+    } else return (start - destination) * 264;
 }
 
 
-function calculatesFarePrice(number, headquarters) {
-    let distance = distanceTravelledInFeet(number, headquarters);
+function calculatesFarePrice(start, destination) {
+    let distance = distanceTravelledInFeet(start, destination);
     if (distance < 400) {
         return 0;
     } else if (distance > 400 && distance < 2000) {
